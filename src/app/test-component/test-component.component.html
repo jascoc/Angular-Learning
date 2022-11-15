@@ -1,0 +1,23 @@
+<div class="main-container">
+    <div *ngIf="!integerArrayIsEmpty(); then trueBranch else elseBranch"></div>
+    <ng-template #trueBranch>Ng If true</ng-template>
+    <ng-template #elseBranch>Ng If false</ng-template>
+
+    <div [hidden]="integerArrayIsEmpty()">Hidden test</div>
+
+    <ul class="nav nav-pills">
+        <li ><a (click)="viewMode = 'map'" href="javascript:void(0);">Map View</a></li>
+        <li ><a (click)="viewMode = 'list'" href="javascript:void(0);">List View</a></li>
+    </ul>  
+    <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase="'map'">Map View Content</div>
+        <div *ngSwitchCase="'list'">List View Content</div>
+        <div *ngSwitchDefault>Default</div>
+    </div>
+
+    <button (click)="onAdd(i);">add</button>
+    <div *ngFor="let elements of forArrayTest; index as i; even as isEven">
+        <li>{{isEven}} - {{i}} - {{elements.name}} - {{elements.description}} <span *ngIf="isEven">(EVEN)</span> <button (click)="onRemove(elements);">remove</button></li>
+    </div>
+</div>
+<router-outlet></router-outlet>

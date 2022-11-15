@@ -1,0 +1,14 @@
+<div class="big-container">
+    <div class="container">
+      <div *ngFor="let product of products">
+          <div class="card">
+            <p>Name: {{product.name}}</p>
+            <p>Description: {{product.description}}</p>
+            <p>Storage Count: {{product.storageCount}}</p>
+            <img [src]=product.image class="image">
+            <button class="button" (click)="deleteProduct(product.id)">delete</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>

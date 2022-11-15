@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card">
+        <form #addForm="ngForm" (ngSubmit)="onAddProduct(addForm)">
+            <div>
+                <label>Name:        </label>
+                <input ngModel name="name" type="text" id="name" required>
+            </div>
+            <div>
+                <label>Description: </label>
+                <input ngModel name="description"  id="description" required>
+            </div>
+            <div>
+                <label>Quantity: </label>
+                <input ngModel name="storageCount" type="number" id="storageCount" required>
+            </div>
+            <div>
+                <img src="{{image}}" id="dog-image">
+            </div>
+            <button class="button" type="submit">add</button>
+        </form>
+    <button class="back-button" routerLink="/homepage">go back</button>
+    </div>
+</div>
